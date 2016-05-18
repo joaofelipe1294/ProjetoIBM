@@ -1,0 +1,3 @@
+/Users/joaofelipe_lopes/Desktop/ProjetoIBM/build/CMakeFiles/ProjetoIBM.dir
+/Users/joaofelipe_lopes/Desktop/ProjetoIBM/build/CMakeFiles/ALL_BUILD.dir
+/Users/joaofelipe_lopes/Desktop/ProjetoIBM/build/CMakeFiles/ZERO_CHECK.dir
