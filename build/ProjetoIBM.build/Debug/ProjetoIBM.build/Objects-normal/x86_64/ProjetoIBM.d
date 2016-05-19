@@ -213,39 +213,14 @@ dependencies: /Users/joaofelipe_lopes/Desktop/ProjetoIBM/ProjetoIBM.cxx \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkImageScanlineConstIterator.h \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkImageScanlineConstIterator.hxx \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkImageScanlineIterator.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/Smoothing/include/itkDiscreteGaussianImageFilter.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageIntensity/include/itkRGBToLuminanceImageFilter.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkUnaryFunctorImageFilter.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkInPlaceImageFilter.h \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkImageToImageFilter.h \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkImageToImageFilterDetail.h \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkImageToImageFilterCommon.h \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkImageToImageFilter.hxx \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkInputDataObjectIterator.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/Smoothing/include/itkDiscreteGaussianImageFilter.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageFilterBase/include/itkNeighborhoodOperatorImageFilter.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkNeighborhoodOperator.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkNeighborhoodOperator.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkZeroFluxNeumannBoundaryCondition.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkZeroFluxNeumannBoundaryCondition.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageFilterBase/include/itkNeighborhoodOperatorImageFilter.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkNeighborhoodAlgorithm.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkNeighborhoodIterator.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkConstNeighborhoodIterator.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkConstNeighborhoodIterator.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkNeighborhoodIterator.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkNeighborhoodAlgorithm.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkConstSliceIterator.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkNeighborhoodInnerProduct.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkNeighborhoodInnerProduct.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkProgressReporter.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkGaussianOperator.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkGaussianOperator.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkOutputWindow.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkProgressAccumulator.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkStreamingImageFilter.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkStreamingImageFilter.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkImageRegionSplitterSlowDimension.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageFilterBase/include/itkCastImageFilter.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkUnaryFunctorImageFilter.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkInPlaceImageFilter.h \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkInPlaceImageFilter.hxx \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkImageRegionIteratorWithIndex.h \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkImageRegionConstIteratorWithIndex.h \
@@ -256,51 +231,4 @@ dependencies: /Users/joaofelipe_lopes/Desktop/ProjetoIBM/ProjetoIBM.cxx \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkImageIteratorWithIndex.hxx \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkImageRegionIteratorWithIndex.hxx \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkUnaryFunctorImageFilter.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageFilterBase/include/itkCastImageFilter.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageIntensity/include/itkRescaleIntensityImageFilter.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageIntensity/include/itkRescaleIntensityImageFilter.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkMinimumMaximumImageCalculator.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkMinimumMaximumImageCalculator.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/Thresholding/include/itkThresholdImageFilter.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/Thresholding/include/itkThresholdImageFilter.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/BinaryMathematicalMorphology/include/itkBinaryDilateImageFilter.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/BinaryMathematicalMorphology/include/itkBinaryMorphologyImageFilter.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageFilterBase/include/itkKernelImageFilter.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageFilterBase/include/itkBoxImageFilter.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageFilterBase/include/itkBoxImageFilter.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageFilterBase/include/itkKernelImageFilter.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/BinaryMathematicalMorphology/include/itkBinaryMorphologyImageFilter.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkConstantBoundaryCondition.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkConstantBoundaryCondition.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/BinaryMathematicalMorphology/include/itkBinaryDilateImageFilter.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkBinaryBallStructuringElement.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkBinaryBallStructuringElement.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkFlatStructuringElement.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkFlatStructuringElement.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkFloodFilledSpatialFunctionConditionalIterator.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkFloodFilledSpatialFunctionConditionalConstIterator.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkFloodFilledFunctionConditionalConstIterator.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkConditionalConstIterator.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkConditionalConstIterator.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkFloodFilledFunctionConditionalConstIterator.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkFloodFilledSpatialFunctionConditionalConstIterator.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkEllipsoidInteriorExteriorSpatialFunction.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkInteriorExteriorSpatialFunction.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkSpatialFunction.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkFunctionBase.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkSpatialFunction.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkInteriorExteriorSpatialFunction.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkEllipsoidInteriorExteriorSpatialFunction.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkVanHerkGilWermanDilateImageFilter.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkVanHerkGilWermanErodeDilateImageFilter.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkBresenhamLine.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkBresenhamLine.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkVanHerkGilWermanErodeDilateImageFilter.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkVanHerkGilWermanUtilities.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkSharedMorphologyUtilities.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkSharedMorphologyUtilities.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkVanHerkGilWermanUtilities.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/BinaryMathematicalMorphology/include/itkBinaryErodeImageFilter.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/BinaryMathematicalMorphology/include/itkBinaryErodeImageFilter.hxx \
-  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/RGBToGrayscaleConverter.hpp \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageIntensity/include/itkRGBToLuminanceImageFilter.h
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkProgressReporter.h

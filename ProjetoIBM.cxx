@@ -1,35 +1,42 @@
 #include "itkImage.h"
 #include "itkImageFileReader.h"
 #include "itkImageFileWriter.h"
-#include "itkDiscreteGaussianImageFilter.h"
-#include "itkCastImageFilter.h"
-#include "itkRescaleIntensityImageFilter.h"
-#include <itkThresholdImageFilter.h>
-#include "itkBinaryDilateImageFilter.h"
-#include "itkBinaryBallStructuringElement.h"
-#include "itkBinaryErodeImageFilter.h"
+#include "itkRGBToLuminanceImageFilter.h"
+#include "itkImageRegionConstIterator.h"
+//#include "itkDiscreteGaussianImageFilter.h"
+//#include "itkCastImageFilter.h"
+//#include "itkRescaleIntensityImageFilter.h"
+//#include <itkThresholdImageFilter.h>
+//#include "itkBinaryDilateImageFilter.h"
+//#include "itkBinaryBallStructuringElement.h"
+//#include "itkBinaryErodeImageFilter.h"
 #include <iostream>
-#include <sstream>
-
-#include "RGBToGrayscaleConverter.hpp"
-
-#include <itkRGBToLuminanceImageFilter.h>
-
+//#include <sstream>
+//#include <itkRGBToLuminanceImageFilter.h>
 
 using namespace std;
 using namespace itk;
 
-typedef Image<unsigned char , 2> ImageType;
+const int DIMENSIONS = 2;
+
+typedef Image<unsigned char , DIMENSIONS> GrayscaleImageType;
+typedef RGBPixel<unsigned char> RGBPixelType;
+typedef Image<RGBPixelType , DIMENSIONS> RGBImageType;
+typedef ImageFileReader<RGBImageType> RGBReaderType;
+typedef RGBToLuminanceImageFilter<RGBImageType, GrayscaleImageType> GrayscaleFilterType;
+
+
+//typedef Image<unsigned char , 2> ImageType;
 //typedef ImageFileReader<ImageType> ReaderType;
-typedef ThresholdImageFilter<ImageType> ThresholdFilter;
-typedef ImageFileWriter<ImageType> WriterType;
-typedef itk::BinaryBallStructuringElement<ImageType::PixelType,2> StructuringElementType;
-typedef itk::BinaryDilateImageFilter <ImageType, ImageType, StructuringElementType> BinaryDilateImageFilterType;
-typedef itk::BinaryErodeImageFilter <ImageType, ImageType, StructuringElementType> BinaryErodeImageFilterType;
+//typedef ThresholdImageFilter<ImageType> ThresholdFilter;
+typedef ImageFileWriter<GrayscaleImageType> WriterType;
+//typedef itk::BinaryBallStructuringElement<ImageType::PixelType,2> StructuringElementType;
+//typedef itk::BinaryDilateImageFilter <ImageType, ImageType, StructuringElementType> BinaryDilateImageFilterType;
+//typedef itk::BinaryErodeImageFilter <ImageType, ImageType, StructuringElementType> BinaryErodeImageFilterType;
 
-/* funcoes */
+/* functions */
 
-int descobreLabel(string nomeImagem){
+/*int descobreLabel(string nomeImagem){
     int posicaoUnderline;
     posicaoUnderline = nomeImagem.find("_");
     if(nomeImagem[posicaoUnderline + 1] == 49){ //49 equivale a 1 na tabela ASCII
@@ -37,13 +44,87 @@ int descobreLabel(string nomeImagem){
     }else{
         return 0;
     }
-}
+}*/
+
+
+
+
+
+
+
 
 //Im001_1.tif
 
 int main(int argc, char * argv[]){
-    RGBToGrayscaleConverter* rgbConerter = new RGBToGrayscaleConverter("Im001_1.tif");
-    rgbConerter -> GetOutput();
+    RGBReaderType::Pointer rgbReader = RGBReaderType::New();
+    rgbReader -> SetFileName("Im001_1.tif");
+    GrayscaleFilterType::Pointer grayscaleFilter = GrayscaleFilterType::New();
+    grayscaleFilter -> SetInput(rgbReader -> GetOutput());
+    grayscaleFilter -> Update();
+    GrayscaleImageType::Pointer grayScaleImage = grayscaleFilter -> GetOutput();
+    
+    
+    
+    GrayscaleImageType::RegionType region = grayScaleImage -> GetLargestPossibleRegion();
+    ImageRegionConstIterator<GrayscaleImageType> imageIterator(grayScaleImage,region);
+
+    while(!imageIterator.IsAtEnd()){
+        unsigned char val = imageIterator.Get();
+        val = abs(val-255);
+        std::cout << (int)val << std::endl;
+        ++imageIterator;
+    }
+    
+
+    
+    return EXIT_SUCCESS;
+}
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //ImageType::Pointer image = ImageType::New();
+    //ReaderType::Pointer reader = ReaderType::New();
+    //reader -> SetFileName("Im001_1.tif");
+    //GrayscaleFilterType::Pointer grayscaleFilter = GrayscaleFilterType::New();
+    //grayscaleFilter -> SetInput(reader -> GetOutput());
+    //image = grayscaleFilter -> GetOutput();
+    
+    
+    
+    
+    
+    
     
     /*
     string imageName;
@@ -86,6 +167,4 @@ int main(int argc, char * argv[]){
     //writer -> SetInput(erodeFilter -> GetOutput());
     writer -> SetInput(reader -> GetOutput());
     writer -> Update();*/
-    
-    return EXIT_SUCCESS;
-}
+
