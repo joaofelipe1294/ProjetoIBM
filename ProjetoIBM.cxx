@@ -11,6 +11,8 @@
 #include <iostream>
 #include <sstream>
 
+#include "RGBToGrayscaleConverter.hpp"
+
 #include <itkRGBToLuminanceImageFilter.h>
 
 
@@ -18,7 +20,7 @@ using namespace std;
 using namespace itk;
 
 typedef Image<unsigned char , 2> ImageType;
-typedef ImageFileReader<ImageType> ReaderType;
+//typedef ImageFileReader<ImageType> ReaderType;
 typedef ThresholdImageFilter<ImageType> ThresholdFilter;
 typedef ImageFileWriter<ImageType> WriterType;
 typedef itk::BinaryBallStructuringElement<ImageType::PixelType,2> StructuringElementType;
@@ -40,7 +42,10 @@ int descobreLabel(string nomeImagem){
 //Im001_1.tif
 
 int main(int argc, char * argv[]){
+    RGBToGrayscaleConverter* rgbConerter = new RGBToGrayscaleConverter("Im001_1.tif");
+    rgbConerter -> GetOutput();
     
+    /*
     string imageName;
     if(argc < 2){
         cout << "Arquivo : ";
@@ -80,7 +85,7 @@ int main(int argc, char * argv[]){
     //writer -> SetInput(thresholdFilter -> GetOutput());
     //writer -> SetInput(erodeFilter -> GetOutput());
     writer -> SetInput(reader -> GetOutput());
-    writer -> Update();
+    writer -> Update();*/
     
     return EXIT_SUCCESS;
 }

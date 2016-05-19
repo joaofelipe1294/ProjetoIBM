@@ -301,4 +301,6 @@ dependencies: /Users/joaofelipe_lopes/Desktop/ProjetoIBM/ProjetoIBM.cxx \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkSharedMorphologyUtilities.hxx \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkVanHerkGilWermanUtilities.hxx \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/BinaryMathematicalMorphology/include/itkBinaryErodeImageFilter.h \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/BinaryMathematicalMorphology/include/itkBinaryErodeImageFilter.hxx
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/BinaryMathematicalMorphology/include/itkBinaryErodeImageFilter.hxx \
+  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/RGBToGrayscaleConverter.hpp \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageIntensity/include/itkRGBToLuminanceImageFilter.h
