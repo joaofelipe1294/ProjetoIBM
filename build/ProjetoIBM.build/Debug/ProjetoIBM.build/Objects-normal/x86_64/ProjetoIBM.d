@@ -231,4 +231,6 @@ dependencies: /Users/joaofelipe_lopes/Desktop/ProjetoIBM/ProjetoIBM.cxx \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkImageIteratorWithIndex.hxx \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkImageRegionIteratorWithIndex.hxx \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkUnaryFunctorImageFilter.hxx \
-  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkProgressReporter.h
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkProgressReporter.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/Thresholding/include/itkThresholdImageFilter.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/Thresholding/include/itkThresholdImageFilter.hxx
