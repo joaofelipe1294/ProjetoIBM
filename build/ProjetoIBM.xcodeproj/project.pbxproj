@@ -34,6 +34,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0C48ECE31CF224D8005FBF63 /* FileHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C48ECE11CF224D8005FBF63 /* FileHandler.cpp */; };
 		0C7B62501CECF66A00397A0D /* ProjetoIBM.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 0C7B624F1CECF66A00397A0D /* ProjetoIBM.cxx */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,8 @@
 
 /* Begin PBXFileReference section */
 		06371BF4EFEC49349B9AAE05 /* ProjetoIBM */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = ProjetoIBM; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C48ECE11CF224D8005FBF63 /* FileHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileHandler.cpp; sourceTree = "<group>"; };
+		0C48ECE21CF224D8005FBF63 /* FileHandler.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FileHandler.hpp; sourceTree = "<group>"; };
 		0C7B624F1CECF66A00397A0D /* ProjetoIBM.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProjetoIBM.cxx; sourceTree = "<group>"; };
 		16B30F229D7A42F4846ECA16 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
 		E9140E0842E745A7A95FABB8 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
@@ -79,6 +82,15 @@
 			);
 			sourceTree = "<group>";
 		};
+		0C48ECDF1CF22325005FBF63 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				0C48ECE11CF224D8005FBF63 /* FileHandler.cpp */,
+				0C48ECE21CF224D8005FBF63 /* FileHandler.hpp */,
+			);
+			name = classes;
+			sourceTree = "<group>";
+		};
 		100E51D8095C40F484B7C2B0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +101,7 @@
 		4389BDA4088045419B0EDB17 /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
+				0C48ECDF1CF22325005FBF63 /* classes */,
 				0C7B624F1CECF66A00397A0D /* ProjetoIBM.cxx */,
 			);
 			name = "Source Files";
@@ -229,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C48ECE31CF224D8005FBF63 /* FileHandler.cpp in Sources */,
 				0C7B62501CECF66A00397A0D /* ProjetoIBM.cxx in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
