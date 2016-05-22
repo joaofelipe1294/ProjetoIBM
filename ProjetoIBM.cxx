@@ -4,6 +4,8 @@
 #include "itkRGBToLuminanceImageFilter.h"
 #include "itkImageRegionConstIterator.h"
 #include <itkThresholdImageFilter.h>
+#include "itkNeighborhoodConnectedImageFilter.h"
+#include <itkOrImageFilter.h>
 #include <iostream>
 //#include "itkDiscreteGaussianImageFilter.h"
 //#include "itkCastImageFilter.h"
@@ -25,10 +27,8 @@ typedef Image<RGBPixelType , DIMENSIONS> RGBImageType;
 typedef ImageFileReader<RGBImageType> RGBReaderType;
 typedef RGBToLuminanceImageFilter<RGBImageType, GrayscaleImageType> GrayscaleFilterType;
 typedef ThresholdImageFilter<GrayscaleImageType> ThresholdFilter;
-
-//typedef Image<unsigned char , 2> ImageType;
-//typedef ImageFileReader<ImageType> ReaderType;
-
+typedef NeighborhoodConnectedImageFilter<GrayscaleImageType, GrayscaleImageType> NeighborhoodConnectedFilterType;
+typedef OrImageFilter<GrayscaleImageType> OrFilterType;
 typedef ImageFileWriter<GrayscaleImageType> WriterType;
 //typedef itk::BinaryBallStructuringElement<ImageType::PixelType,2> StructuringElementType;
 //typedef itk::BinaryDilateImageFilter <ImageType, ImageType, StructuringElementType> BinaryDilateImageFilterType;
@@ -47,17 +47,65 @@ typedef ImageFileWriter<GrayscaleImageType> WriterType;
 }*/
 
 
+
+
+
 //Im001_1.tif
+//Im002_1.tif
+//Im003_1.tif
+//Im004_1.tif
+//Im005_1.tif
+//Im006_1.tif
+//Im007_1.tif
+//Im008_1.tif
+//Im009_1.tif
+//Im010_1.tif
+
 
 int main(int argc, char * argv[]){
-    
+    string imageName = "Im184_0.tif";
                            /* converte imagem */
     RGBReaderType::Pointer rgbReader = RGBReaderType::New();
-    rgbReader -> SetFileName("Im184_0.tif");
+    rgbReader -> SetFileName(imageName);
     GrayscaleFilterType::Pointer grayscaleFilter = GrayscaleFilterType::New();
     grayscaleFilter -> SetInput(rgbReader -> GetOutput());
     GrayscaleImageType::Pointer grayScaleImage = grayscaleFilter -> GetOutput();
     grayscaleFilter -> Update();
+    
+    
+                    /* region growing */
+    NeighborhoodConnectedFilterType::Pointer regionGrow = NeighborhoodConnectedFilterType::New();
+    float lower = 0;
+    float upper = 97;
+    regionGrow->SetLower(lower);
+    regionGrow->SetUpper(upper);
+    regionGrow->SetReplaceValue(255);
+    regionGrow->SetInput(grayscaleFilter -> GetOutput());
+    
+    for (int x = 5; x < 250; x += 5) {
+        GrayscaleImageType::IndexType seed1;
+        seed1[0] = x;
+        seed1[1] = 0;
+        regionGrow->AddSeed(seed1);
+        GrayscaleImageType::IndexType seed2;
+        seed2[0] = x;
+        seed2[1] = 255;
+        regionGrow->AddSeed(seed2);
+    }
+    for (int y = 0; y < 250; y += 5) {
+        GrayscaleImageType::IndexType seed1;
+        seed1[0] = 255;
+        seed1[1] = y;
+        regionGrow->AddSeed(seed1);
+        GrayscaleImageType::IndexType seed2;
+        seed2[0] = 0;
+        seed2[1] = y;
+        regionGrow->AddSeed(seed2);
+    }
+    
+    
+    
+    
     
                             /* primeiro threshold */
     ThresholdFilter::Pointer thresholdFilter = ThresholdFilter::New();
@@ -111,11 +159,18 @@ int main(int argc, char * argv[]){
             thresholdFilter -> SetInput(thresholdImage);
             thresholdFilter -> Update();
             thresholdImage = thresholdFilter -> GetOutput();
-            cout << "BREAK limiar : " << limiarAtual << endl;
+            
             ThresholdFilter::Pointer thresholdFilter = ThresholdFilter::New();
             thresholdFilter -> SetInput(grayscaleFilter -> GetOutput());
             thresholdFilter -> SetOutsideValue(255);
-            thresholdFilter -> SetUpper(limiarAtual);
+            if(limiarAtual > 125){
+                thresholdFilter -> SetUpper(limiarAtual / 2);
+                cout << "BREAK limiar : " << limiarAtual << " valor /2 : " << limiarAtual / 2 <<  endl;
+            }else{
+                thresholdFilter -> SetUpper(limiarAtual);
+                cout << "BREAK limiar : " << limiarAtual / 2 <<  endl;
+            }
+            
             thresholdFilter -> SetLower(0);
             thresholdFilter -> Update();
             //GrayscaleImageType::Pointer thresholdImage = GrayscaleImageType::New();
@@ -148,11 +203,26 @@ int main(int argc, char * argv[]){
     }
     
     
+    /* orImage gilter */
     
+    OrFilterType::Pointer orFilter = OrFilterType::New();
+    orFilter -> SetInput(0, thresholdImage);
+    orFilter -> SetInput(1, regionGrow -> GetOutput());
+    orFilter -> Update();
+    
+    
+           /* gera resultado */
+    
+    stringstream imageOut;
+    imageOut << "gray_" << imageName;
     
     WriterType::Pointer writer = WriterType::New();
-    writer -> SetFileName("imagem_limiar.tif");
-    writer -> SetInput(thresholdImage);//(thresholdFilter -> GetOutput());
+    writer -> SetFileName(imageOut.str());
+    //writer -> SetInput(grayscaleImage);
+    //writer -> SetInput(thresholdImage);//(thresholdFilter -> GetOutput());
+    //writer -> SetInput(grayscaleFilter -> GetOutput());
+    //writer -> SetInput(regionGrow -> GetOutput());
+    writer -> SetInput(orFilter -> GetOutput());
     writer -> Update();
     
     
@@ -163,7 +233,7 @@ int main(int argc, char * argv[]){
 
     
     
-    
+
     
     
     
