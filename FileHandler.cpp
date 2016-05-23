@@ -40,7 +40,6 @@ void FileHandler::SetNumberofFiles(){
 }
 
 void FileHandler::SetFiles(){
-    cout << "ESTOU AQUI" << endl;
     DIR *dir = 0;
     struct dirent *input = 0;
     unsigned char isFile = 0x8;

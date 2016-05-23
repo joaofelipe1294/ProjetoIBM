@@ -34,7 +34,11 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0C05B2E21CF2B05800587394 /* DataCollector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C05B2E01CF2B05800587394 /* DataCollector.cpp */; };
+		0C0778A61CF3AE3B00F2C6FB /* KNNClassifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C0778A41CF3AE3B00F2C6FB /* KNNClassifier.cpp */; };
+		0C0778A91CF3B53A00F2C6FB /* ImageData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C0778A71CF3B53A00F2C6FB /* ImageData.cpp */; };
 		0C48ECE31CF224D8005FBF63 /* FileHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C48ECE11CF224D8005FBF63 /* FileHandler.cpp */; };
+		0C48ECE61CF255CE005FBF63 /* OptimalThreshold.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C48ECE41CF255CE005FBF63 /* OptimalThreshold.cpp */; };
 		0C7B62501CECF66A00397A0D /* ProjetoIBM.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 0C7B624F1CECF66A00397A0D /* ProjetoIBM.cxx */; };
 /* End PBXBuildFile section */
 
@@ -64,8 +68,16 @@
 
 /* Begin PBXFileReference section */
 		06371BF4EFEC49349B9AAE05 /* ProjetoIBM */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = ProjetoIBM; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C05B2E01CF2B05800587394 /* DataCollector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataCollector.cpp; sourceTree = "<group>"; };
+		0C05B2E11CF2B05800587394 /* DataCollector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DataCollector.hpp; sourceTree = "<group>"; };
+		0C0778A41CF3AE3B00F2C6FB /* KNNClassifier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KNNClassifier.cpp; sourceTree = "<group>"; };
+		0C0778A51CF3AE3B00F2C6FB /* KNNClassifier.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KNNClassifier.hpp; sourceTree = "<group>"; };
+		0C0778A71CF3B53A00F2C6FB /* ImageData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageData.cpp; sourceTree = "<group>"; };
+		0C0778A81CF3B53A00F2C6FB /* ImageData.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ImageData.hpp; sourceTree = "<group>"; };
 		0C48ECE11CF224D8005FBF63 /* FileHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileHandler.cpp; sourceTree = "<group>"; };
 		0C48ECE21CF224D8005FBF63 /* FileHandler.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FileHandler.hpp; sourceTree = "<group>"; };
+		0C48ECE41CF255CE005FBF63 /* OptimalThreshold.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OptimalThreshold.cpp; sourceTree = "<group>"; };
+		0C48ECE51CF255CE005FBF63 /* OptimalThreshold.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OptimalThreshold.hpp; sourceTree = "<group>"; };
 		0C7B624F1CECF66A00397A0D /* ProjetoIBM.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProjetoIBM.cxx; sourceTree = "<group>"; };
 		16B30F229D7A42F4846ECA16 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
 		E9140E0842E745A7A95FABB8 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
@@ -82,11 +94,26 @@
 			);
 			sourceTree = "<group>";
 		};
+		0C05B2E31CF2B4A700587394 /* headers */ = {
+			isa = PBXGroup;
+			children = (
+				0C48ECE21CF224D8005FBF63 /* FileHandler.hpp */,
+				0C48ECE51CF255CE005FBF63 /* OptimalThreshold.hpp */,
+				0C05B2E11CF2B05800587394 /* DataCollector.hpp */,
+				0C0778A51CF3AE3B00F2C6FB /* KNNClassifier.hpp */,
+				0C0778A81CF3B53A00F2C6FB /* ImageData.hpp */,
+			);
+			name = headers;
+			sourceTree = "<group>";
+		};
 		0C48ECDF1CF22325005FBF63 /* classes */ = {
 			isa = PBXGroup;
 			children = (
 				0C48ECE11CF224D8005FBF63 /* FileHandler.cpp */,
-				0C48ECE21CF224D8005FBF63 /* FileHandler.hpp */,
+				0C48ECE41CF255CE005FBF63 /* OptimalThreshold.cpp */,
+				0C05B2E01CF2B05800587394 /* DataCollector.cpp */,
+				0C0778A41CF3AE3B00F2C6FB /* KNNClassifier.cpp */,
+				0C0778A71CF3B53A00F2C6FB /* ImageData.cpp */,
 			);
 			name = classes;
 			sourceTree = "<group>";
@@ -101,6 +128,7 @@
 		4389BDA4088045419B0EDB17 /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
+				0C05B2E31CF2B4A700587394 /* headers */,
 				0C48ECDF1CF22325005FBF63 /* classes */,
 				0C7B624F1CECF66A00397A0D /* ProjetoIBM.cxx */,
 			);
@@ -242,8 +270,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C0778A61CF3AE3B00F2C6FB /* KNNClassifier.cpp in Sources */,
 				0C48ECE31CF224D8005FBF63 /* FileHandler.cpp in Sources */,
 				0C7B62501CECF66A00397A0D /* ProjetoIBM.cxx in Sources */,
+				0C48ECE61CF255CE005FBF63 /* OptimalThreshold.cpp in Sources */,
+				0C05B2E21CF2B05800587394 /* DataCollector.cpp in Sources */,
+				0C0778A91CF3B53A00F2C6FB /* ImageData.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

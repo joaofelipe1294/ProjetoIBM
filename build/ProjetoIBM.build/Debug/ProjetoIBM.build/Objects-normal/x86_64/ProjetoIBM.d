@@ -301,4 +301,6 @@ dependencies: /Users/joaofelipe_lopes/Desktop/ProjetoIBM/ProjetoIBM.cxx \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkSharedMorphologyUtilities.h \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkSharedMorphologyUtilities.hxx \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkVanHerkGilWermanUtilities.hxx \
-  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/FileHandler.hpp
+  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/FileHandler.hpp \
+  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/OptimalThreshold.hpp \
+  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/DataCollector.hpp
