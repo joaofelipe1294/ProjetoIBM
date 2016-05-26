@@ -24,6 +24,11 @@ public:
     void SetThresholdValue(int thresholdValue);
     void SetLabel(int label);
     void SetDistance(int distance);
+    int GetPxCount();
+    int GetCellAvrage();
+    int GetThresholdValue();
+    int GetLabel();
+    int GetDistance();
 };
 
 #endif /* ImageData_hpp */

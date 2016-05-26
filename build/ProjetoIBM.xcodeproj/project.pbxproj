@@ -100,8 +100,8 @@
 				0C48ECE21CF224D8005FBF63 /* FileHandler.hpp */,
 				0C48ECE51CF255CE005FBF63 /* OptimalThreshold.hpp */,
 				0C05B2E11CF2B05800587394 /* DataCollector.hpp */,
-				0C0778A51CF3AE3B00F2C6FB /* KNNClassifier.hpp */,
 				0C0778A81CF3B53A00F2C6FB /* ImageData.hpp */,
+				0C0778A51CF3AE3B00F2C6FB /* KNNClassifier.hpp */,
 			);
 			name = headers;
 			sourceTree = "<group>";
@@ -112,8 +112,8 @@
 				0C48ECE11CF224D8005FBF63 /* FileHandler.cpp */,
 				0C48ECE41CF255CE005FBF63 /* OptimalThreshold.cpp */,
 				0C05B2E01CF2B05800587394 /* DataCollector.cpp */,
-				0C0778A41CF3AE3B00F2C6FB /* KNNClassifier.cpp */,
 				0C0778A71CF3B53A00F2C6FB /* ImageData.cpp */,
+				0C0778A41CF3AE3B00F2C6FB /* KNNClassifier.cpp */,
 			);
 			name = classes;
 			sourceTree = "<group>";

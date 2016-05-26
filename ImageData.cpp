@@ -28,3 +28,22 @@ void ImageData::SetDistance(int distance){
     this -> distance = distance;
 }
 
+int ImageData::GetPxCount(){
+    return this -> pxCount;
+}
+
+int ImageData::GetCellAvrage(){
+    return this -> cellAvrage;
+}
+
+int ImageData::GetThresholdValue(){
+    return this -> thresholdValue;
+}
+
+int ImageData::GetLabel(){
+    return this -> label;
+}
+
+int ImageData::GetDistance(){
+    return this -> distance;
+}

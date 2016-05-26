@@ -37,8 +37,8 @@ void DataCollector::GetData(){
     if(this -> pxCount > 0){
         this -> cellAvrage /= this -> pxCount;
     }
-    cout << "Media : " << this -> cellAvrage << endl;
-    cout << "Px count : " << this -> pxCount << endl;
+    //cout << "Media : " << this -> cellAvrage << endl;
+    //cout << "Px count : " << this -> pxCount << endl;
 }
 
 int DataCollector::GetPxCount(){
@@ -46,5 +46,10 @@ int DataCollector::GetPxCount(){
 }
 
 int DataCollector::GetCellAvrage(){
-    return this -> cellAvrage;
+    if(this -> cellAvrage == 0){
+        return 180;
+    }else{
+        return this -> cellAvrage;
+    }
+    
 }
