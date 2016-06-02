@@ -355,4 +355,5 @@ dependencies: /Users/joaofelipe_lopes/Desktop/ProjetoIBM/ProjetoIBM.cxx \
   /Users/joaofelipe_lopes/Desktop/ProjetoIBM/DataCollector.hpp \
   /Users/joaofelipe_lopes/Desktop/ProjetoIBM/KNNClassifier.hpp \
   /Users/joaofelipe_lopes/Desktop/ProjetoIBM/ImageData.hpp \
-  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/LabelFinder.hpp
+  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/LabelFinder.hpp \
+  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/TrainPipeline.hpp
