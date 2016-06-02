@@ -8,6 +8,9 @@
 #include <itkOrImageFilter.h>
 #include <itkBinaryDilateImageFilter.h>
 #include "itkBinaryBallStructuringElement.h"
+#include "itkBinaryErodeImageFilter.h"
+#include "itkGrayscaleMorphologicalOpeningImageFilter.h"
+#include "itkGrayscaleMorphologicalClosingImageFilter.h"
 #include <iostream>
 #include <dirent.h>
 #include <cstdlib>
@@ -18,6 +21,7 @@
 #include "OptimalThreshold.hpp"
 #include "DataCollector.hpp"
 #include "KNNClassifier.hpp"
+#include "LabelFinder.hpp"
 
 using namespace std;
 using namespace itk;
@@ -35,9 +39,14 @@ typedef OrImageFilter<GrayscaleImageType> OrFilterType;
 typedef ImageFileWriter<GrayscaleImageType> WriterType;
 typedef BinaryBallStructuringElement<GrayscaleImageType::PixelType , 2> StructuringElementType;
 typedef BinaryDilateImageFilter <GrayscaleImageType, GrayscaleImageType, StructuringElementType> BinaryDilateImageFilterType;
+typedef BinaryErodeImageFilter <GrayscaleImageType, GrayscaleImageType, StructuringElementType> BinaryErodeImageFilterType;
+typedef GrayscaleMorphologicalClosingImageFilter<GrayscaleImageType, GrayscaleImageType, StructuringElementType> OpeningMorphologyType;
+
+
 
 /* functions */
 
+/*
 int descobreLabel(string nomeImagem){
     int posicaoUnderline;
     posicaoUnderline = nomeImagem.find("_");
@@ -46,7 +55,7 @@ int descobreLabel(string nomeImagem){
     }else{
         return 0;
     }
-}
+}*/
 
 int main(int argc, char * argv[]){
     string imageName , dirName;// = "img/";
@@ -79,7 +88,9 @@ int main(int argc, char * argv[]){
         rgbReader -> SetFileName(fileHandler -> GetFiles()[cont]);
         //rgbReader -> SetFileName("img/Im148_0.tif"); // teste uma imagem
         //label = descobreLabel("img/Im148_0.tif");
-        label = descobreLabel(fileHandler -> GetFiles()[cont]);
+        LabelFinder* labelFinder = new LabelFinder(fileHandler -> GetFiles()[cont]);
+        label = labelFinder -> GetLabel();
+        //label = descobreLabel(fileHandler -> GetFiles()[cont]);
         rgbReader -> SetFileName(fileHandler -> GetFiles()[cont]);
         GrayscaleFilterType::Pointer grayscaleFilter = GrayscaleFilterType::New();
         grayscaleFilter -> SetInput(rgbReader -> GetOutput());
@@ -193,8 +204,15 @@ int main(int argc, char * argv[]){
     
     
     cout << "TREINAMENTO CONCLUIDO" << endl;
+
+    
+    
     
 /* ================================================ CLASSIFY IMAGE ======================================== */
+    
+    
+    
+    
     
     /* --------------------------------------- IMAGE CONVERTING --------------------------------------------- */
     
@@ -207,9 +225,31 @@ int main(int argc, char * argv[]){
     
     /* ------------------------------------------------------------------------------------------------------ */
     
+    /* ------------------------------------------- OPENING MORPHOLOGY -------------------------------------------- */
+    
+    StructuringElementType structuringElementOpen;
+    structuringElementOpen.SetRadius(5);
+    structuringElementOpen.CreateStructuringElement();
+    OpeningMorphologyType::Pointer openingFilter = OpeningMorphologyType::New();
+    openingFilter -> SetInput(grayscaleFilter -> GetOutput());
+    openingFilter -> SetKernel(structuringElementOpen);
+    stringstream imageOutOpen;
+    imageOutOpen << "open_" << imageName;
+    cout  << "imageName : " << imageOutOpen.str() << endl;
+    WriterType::Pointer writerOpen = WriterType::New();
+    writerOpen -> SetFileName(imageOutOpen.str());
+    writerOpen -> SetInput(openingFilter -> GetOutput());
+    writerOpen -> Update();
+    
+    
+    /* ------------------------------------------------------------------------------------------------------ */
+    
+    
+    
     /* ------------------------------------------- FIND THRESHOLD VALUE -------------------------------------- */
     
-    Optimalthreshold* optimalThreshold = new Optimalthreshold(grayscaleFilter -> GetOutput());
+    Optimalthreshold* optimalThreshold = new Optimalthreshold(openingFilter -> GetOutput());
+    //Optimalthreshold* optimalThreshold = new Optimalthreshold(grayscaleFilter -> GetOutput());
     limitValue = optimalThreshold -> GetOutput();
     //cout << "Valor Limiar : " << limitValue << endl;
     ThresholdFilter::Pointer thresholdFilter = ThresholdFilter::New();
@@ -266,7 +306,7 @@ int main(int argc, char * argv[]){
     
     /* ------------------------------------------------------------------------------------------------------- */
     
-    /* --------------------------------------------- MORFOLOGY ------------------------------------------------ */
+    /* --------------------------------------------- MORFOLOGY ------------------------------------------------ *
     
     StructuringElementType structuringElement;
     structuringElement.SetRadius(4);
@@ -276,11 +316,17 @@ int main(int argc, char * argv[]){
     dilateFilter -> SetKernel(structuringElement);
     dilateFilter -> Update();
     
+    //BinaryErodeImageFilterType::Pointer erodeFilter = BinaryErodeImageFilterType::New();
+    //erodeFilter -> SetInput(dilateFilter -> GetOutput());
+    //erodeFilter -> SetKernel(structuringElement);
+    //erodeFilter -> Update();
+    
     /* ------------------------------------------------------------------------------------------------------- */
     
     /* --------------------------------------------- DATA COLLECT -------------------------------------------- */
     
-    DataCollector* dataCollector = new DataCollector(dilateFilter -> GetOutput());
+    //DataCollector* dataCollector = new DataCollector(dilateFilter -> GetOutput());
+    DataCollector* dataCollector = new DataCollector(orFilter -> GetOutput());
     
     /* ------------------------------------------------------------------------------------------------------- */
     
@@ -292,7 +338,7 @@ int main(int argc, char * argv[]){
     cout  << "imageName : " << imageOut.str() << endl;
     WriterType::Pointer writer = WriterType::New();
     writer -> SetFileName(imageOut.str());
-    writer -> SetInput(dilateFilter -> GetOutput());
+    writer -> SetInput(orFilter -> GetOutput());
     writer -> Update();
     
     /* ------------------------------------------------------------------------------------------------------- */

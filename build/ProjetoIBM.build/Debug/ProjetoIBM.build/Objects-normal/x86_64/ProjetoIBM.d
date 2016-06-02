@@ -301,8 +301,58 @@ dependencies: /Users/joaofelipe_lopes/Desktop/ProjetoIBM/ProjetoIBM.cxx \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkSharedMorphologyUtilities.h \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkSharedMorphologyUtilities.hxx \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkVanHerkGilWermanUtilities.hxx \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/BinaryMathematicalMorphology/include/itkBinaryErodeImageFilter.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/BinaryMathematicalMorphology/include/itkBinaryErodeImageFilter.hxx \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkGrayscaleMorphologicalOpeningImageFilter.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkMovingHistogramDilateImageFilter.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkMovingHistogramMorphologyImageFilter.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkMorphologyHistogram.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageFilterBase/include/itkMovingHistogramImageFilter.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageFilterBase/include/itkMovingHistogramImageFilterBase.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageFilterBase/include/itkMovingHistogramImageFilterBase.hxx \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkImageLinearConstIteratorWithIndex.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkImageLinearConstIteratorWithIndex.hxx \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageFilterBase/include/itkMovingHistogramImageFilter.hxx \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkMovingHistogramMorphologyImageFilter.hxx \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkMovingHistogramErodeImageFilter.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkBasicDilateImageFilter.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkMorphologyImageFilter.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkMorphologyImageFilter.hxx \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkBasicDilateImageFilter.hxx \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkBasicErodeImageFilter.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkBasicErodeImageFilter.hxx \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkAnchorOpenImageFilter.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkAnchorOpenCloseImageFilter.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkAnchorOpenCloseLine.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkAnchorOpenCloseLine.hxx \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkAnchorErodeDilateLine.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkAnchorErodeDilateLine.hxx \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkAnchorOpenCloseImageFilter.hxx \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkAnchorUtilities.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkAnchorUtilities.hxx \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkVanHerkGilWermanErodeImageFilter.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkGrayscaleMorphologicalOpeningImageFilter.hxx \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageGrid/include/itkCropImageFilter.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkExtractImageFilter.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkExtractImageFilterRegionCopier.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkExtractImageFilter.hxx \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageGrid/include/itkCropImageFilter.hxx \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageGrid/include/itkConstantPadImageFilter.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageGrid/include/itkPadImageFilter.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageGrid/include/itkPadImageFilterBase.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageGrid/include/itkPadImageFilterBase.hxx \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkImageRegionExclusionIteratorWithIndex.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkImageRegionExclusionConstIteratorWithIndex.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkImageRegionExclusionConstIteratorWithIndex.hxx \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkImageRegionExclusionIteratorWithIndex.hxx \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageGrid/include/itkPadImageFilter.hxx \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/ImageGrid/include/itkConstantPadImageFilter.hxx \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkGrayscaleMorphologicalClosingImageFilter.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkAnchorCloseImageFilter.h \
+  /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkGrayscaleMorphologicalClosingImageFilter.hxx \
   /Users/joaofelipe_lopes/Desktop/ProjetoIBM/FileHandler.hpp \
   /Users/joaofelipe_lopes/Desktop/ProjetoIBM/OptimalThreshold.hpp \
   /Users/joaofelipe_lopes/Desktop/ProjetoIBM/DataCollector.hpp \
   /Users/joaofelipe_lopes/Desktop/ProjetoIBM/KNNClassifier.hpp \
-  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/ImageData.hpp
+  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/ImageData.hpp \
+  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/LabelFinder.hpp
