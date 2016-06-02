@@ -40,6 +40,8 @@
 		0C48ECE31CF224D8005FBF63 /* FileHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C48ECE11CF224D8005FBF63 /* FileHandler.cpp */; };
 		0C48ECE61CF255CE005FBF63 /* OptimalThreshold.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C48ECE41CF255CE005FBF63 /* OptimalThreshold.cpp */; };
 		0C7B62501CECF66A00397A0D /* ProjetoIBM.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 0C7B624F1CECF66A00397A0D /* ProjetoIBM.cxx */; };
+		0C91819D1D00D75C0056FFE1 /* LabelFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C91819B1D00D75C0056FFE1 /* LabelFinder.cpp */; };
+		0C9181A01D00DB580056FFE1 /* TrainPipeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C91819E1D00DB580056FFE1 /* TrainPipeline.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,10 @@
 		0C48ECE41CF255CE005FBF63 /* OptimalThreshold.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OptimalThreshold.cpp; sourceTree = "<group>"; };
 		0C48ECE51CF255CE005FBF63 /* OptimalThreshold.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OptimalThreshold.hpp; sourceTree = "<group>"; };
 		0C7B624F1CECF66A00397A0D /* ProjetoIBM.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProjetoIBM.cxx; sourceTree = "<group>"; };
+		0C91819B1D00D75C0056FFE1 /* LabelFinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabelFinder.cpp; sourceTree = "<group>"; };
+		0C91819C1D00D75C0056FFE1 /* LabelFinder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LabelFinder.hpp; sourceTree = "<group>"; };
+		0C91819E1D00DB580056FFE1 /* TrainPipeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TrainPipeline.cpp; sourceTree = "<group>"; };
+		0C91819F1D00DB580056FFE1 /* TrainPipeline.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TrainPipeline.hpp; sourceTree = "<group>"; };
 		16B30F229D7A42F4846ECA16 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
 		E9140E0842E745A7A95FABB8 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
 		F1A40C1B429C4DF09F17C403 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
@@ -102,6 +108,7 @@
 				0C05B2E11CF2B05800587394 /* DataCollector.hpp */,
 				0C0778A81CF3B53A00F2C6FB /* ImageData.hpp */,
 				0C0778A51CF3AE3B00F2C6FB /* KNNClassifier.hpp */,
+				0C91819C1D00D75C0056FFE1 /* LabelFinder.hpp */,
 			);
 			name = headers;
 			sourceTree = "<group>";
@@ -114,8 +121,18 @@
 				0C05B2E01CF2B05800587394 /* DataCollector.cpp */,
 				0C0778A71CF3B53A00F2C6FB /* ImageData.cpp */,
 				0C0778A41CF3AE3B00F2C6FB /* KNNClassifier.cpp */,
+				0C91819B1D00D75C0056FFE1 /* LabelFinder.cpp */,
 			);
 			name = classes;
+			sourceTree = "<group>";
+		};
+		0C9181A21D00E0FB0056FFE1 /* pipelines */ = {
+			isa = PBXGroup;
+			children = (
+				0C91819E1D00DB580056FFE1 /* TrainPipeline.cpp */,
+				0C91819F1D00DB580056FFE1 /* TrainPipeline.hpp */,
+			);
+			name = pipelines;
 			sourceTree = "<group>";
 		};
 		100E51D8095C40F484B7C2B0 /* Resources */ = {
@@ -128,6 +145,7 @@
 		4389BDA4088045419B0EDB17 /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
+				0C9181A21D00E0FB0056FFE1 /* pipelines */,
 				0C05B2E31CF2B4A700587394 /* headers */,
 				0C48ECDF1CF22325005FBF63 /* classes */,
 				0C7B624F1CECF66A00397A0D /* ProjetoIBM.cxx */,
@@ -275,6 +293,8 @@
 				0C7B62501CECF66A00397A0D /* ProjetoIBM.cxx in Sources */,
 				0C48ECE61CF255CE005FBF63 /* OptimalThreshold.cpp in Sources */,
 				0C05B2E21CF2B05800587394 /* DataCollector.cpp in Sources */,
+				0C91819D1D00D75C0056FFE1 /* LabelFinder.cpp in Sources */,
+				0C9181A01D00DB580056FFE1 /* TrainPipeline.cpp in Sources */,
 				0C0778A91CF3B53A00F2C6FB /* ImageData.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
