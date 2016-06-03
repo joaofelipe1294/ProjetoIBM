@@ -19,8 +19,8 @@ void TrainPipeline::Train(){
     int limitValue = 0;
     int label = NULL;
     FILE* resultFile;
-    string resultFileName = "results.txt";
-    resultFile = fopen(resultFileName.c_str(), "w");
+    //string resultFileName = "results.txt";
+    resultFile = fopen(RESULT_FILENAME.c_str(), "w");
     FileHandler* fileHandler = new FileHandler(dirName);
     fprintf(resultFile, "%d\n" , fileHandler -> GetNumberOfFiles());
     for (int cont = 0; cont < fileHandler -> GetNumberOfFiles(); cont++) {
@@ -41,10 +41,29 @@ void TrainPipeline::Train(){
     grayscaleFilter -> Update();
             
 /* ------------------------------------------------------------------------------------------------------ */
-            
+     
+/* ------------------------------------------- OPENING MORPHOLOGY -------------------------------------------- */
+        
+    StructuringElementType structuringElementOpen;
+    structuringElementOpen.SetRadius(5);
+    structuringElementOpen.CreateStructuringElement();
+    OpeningMorphologyType::Pointer openingFilter = OpeningMorphologyType::New();
+    openingFilter -> SetInput(grayscaleFilter -> GetOutput());
+    openingFilter -> SetKernel(structuringElementOpen);
+    //stringstream imageOutOpen;
+    //imageOutOpen << "open_" << imageName;
+    //cout  << "imageName : " << imageOutOpen.str() << endl;
+    //WriterType::Pointer writerOpen = WriterType::New();
+    //writerOpen -> SetFileName(imageOutOpen.str());
+    //writerOpen -> SetInput(openingFilter -> GetOutput());
+    //writerOpen -> Update();
+        
+/* ------------------------------------------------------------------------------------------------------ */
+        
 /* ------------------------------------------- FIND THRESHOLD VALUE -------------------------------------- */
-            
-    Optimalthreshold* optimalThreshold = new Optimalthreshold(grayscaleFilter -> GetOutput());
+        
+    Optimalthreshold* optimalThreshold = new Optimalthreshold(openingFilter -> GetOutput());
+    //Optimalthreshold* optimalThreshold = new Optimalthreshold(grayscaleFilter -> GetOutput());
     limitValue = optimalThreshold -> GetOutput();
     //cout << "Valor Limiar : " << limitValue << endl;
     ThresholdFilter::Pointer thresholdFilter = ThresholdFilter::New();
@@ -101,21 +120,11 @@ void TrainPipeline::Train(){
         
 /* ------------------------------------------------------------------------------------------------------- */
             
-/* --------------------------------------------- MORFOLOGY ------------------------------------------------ */
-            
-    StructuringElementType structuringElement;
-    structuringElement.SetRadius(4);
-    structuringElement.CreateStructuringElement();
-    BinaryDilateImageFilterType::Pointer dilateFilter = BinaryDilateImageFilterType::New();
-    dilateFilter -> SetInput(orFilter -> GetOutput());
-    dilateFilter -> SetKernel(structuringElement);
-    dilateFilter -> Update();
-        
-/* ------------------------------------------------------------------------------------------------------- */
-            
 /* --------------------------------------------- DATA COLLECT -------------------------------------------- */
         
-    DataCollector* dataCollector = new DataCollector(dilateFilter -> GetOutput());
+    //DataCollector* dataCollector = new DataCollector(dilateFilter -> GetOutput());
+    DataCollector* dataCollector = new DataCollector(orFilter -> GetOutput());
+        
         
 /* ------------------------------------------------------------------------------------------------------- */
             

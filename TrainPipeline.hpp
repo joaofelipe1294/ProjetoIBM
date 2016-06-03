@@ -38,6 +38,7 @@ using namespace std;
 using namespace itk;
 
 const int DIMENSIONS = 2;
+const string RESULT_FILENAME = "results.txt";
 
 typedef Image<unsigned char , DIMENSIONS> GrayscaleImageType;
 typedef RGBPixel<unsigned char> RGBPixelType;

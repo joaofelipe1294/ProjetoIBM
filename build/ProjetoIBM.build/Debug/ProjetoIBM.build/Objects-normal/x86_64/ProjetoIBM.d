@@ -1,4 +1,6 @@
 dependencies: /Users/joaofelipe_lopes/Desktop/ProjetoIBM/ProjetoIBM.cxx \
+  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/FileHandler.hpp \
+  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/OptimalThreshold.hpp \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkImage.h \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkImageRegion.h \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkRegion.h \
@@ -134,6 +136,11 @@ dependencies: /Users/joaofelipe_lopes/Desktop/ProjetoIBM/ProjetoIBM.cxx \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkDomainThreader.hxx \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkSpatialOrientation.h \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Core/Common/include/itkImage.hxx \
+  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/DataCollector.hpp \
+  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/KNNClassifier.hpp \
+  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/ImageData.hpp \
+  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/LabelFinder.hpp \
+  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/TrainPipeline.hpp \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/IO/ImageBase/include/itkImageFileReader.h \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/IO/ImageBase/include/itkImageFileReaderException.h \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/build/Modules/Core/Common/ITKIOImageBaseExport.h \
@@ -350,10 +357,4 @@ dependencies: /Users/joaofelipe_lopes/Desktop/ProjetoIBM/ProjetoIBM.cxx \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkGrayscaleMorphologicalClosingImageFilter.h \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkAnchorCloseImageFilter.h \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkGrayscaleMorphologicalClosingImageFilter.hxx \
-  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/FileHandler.hpp \
-  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/OptimalThreshold.hpp \
-  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/DataCollector.hpp \
-  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/KNNClassifier.hpp \
-  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/ImageData.hpp \
-  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/LabelFinder.hpp \
-  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/TrainPipeline.hpp
+  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/PreProcessPipeline.hpp

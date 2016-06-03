@@ -42,6 +42,7 @@
 		0C7B62501CECF66A00397A0D /* ProjetoIBM.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 0C7B624F1CECF66A00397A0D /* ProjetoIBM.cxx */; };
 		0C91819D1D00D75C0056FFE1 /* LabelFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C91819B1D00D75C0056FFE1 /* LabelFinder.cpp */; };
 		0C9181A01D00DB580056FFE1 /* TrainPipeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C91819E1D00DB580056FFE1 /* TrainPipeline.cpp */; };
+		0C9181A51D0100600056FFE1 /* PreProcessPipeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C9181A31D0100600056FFE1 /* PreProcessPipeline.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		0C91819C1D00D75C0056FFE1 /* LabelFinder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LabelFinder.hpp; sourceTree = "<group>"; };
 		0C91819E1D00DB580056FFE1 /* TrainPipeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TrainPipeline.cpp; sourceTree = "<group>"; };
 		0C91819F1D00DB580056FFE1 /* TrainPipeline.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TrainPipeline.hpp; sourceTree = "<group>"; };
+		0C9181A31D0100600056FFE1 /* PreProcessPipeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PreProcessPipeline.cpp; sourceTree = "<group>"; };
+		0C9181A41D0100600056FFE1 /* PreProcessPipeline.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PreProcessPipeline.hpp; sourceTree = "<group>"; };
 		16B30F229D7A42F4846ECA16 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
 		E9140E0842E745A7A95FABB8 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
 		F1A40C1B429C4DF09F17C403 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
@@ -131,6 +134,8 @@
 			children = (
 				0C91819E1D00DB580056FFE1 /* TrainPipeline.cpp */,
 				0C91819F1D00DB580056FFE1 /* TrainPipeline.hpp */,
+				0C9181A31D0100600056FFE1 /* PreProcessPipeline.cpp */,
+				0C9181A41D0100600056FFE1 /* PreProcessPipeline.hpp */,
 			);
 			name = pipelines;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C9181A51D0100600056FFE1 /* PreProcessPipeline.cpp in Sources */,
 				0C0778A61CF3AE3B00F2C6FB /* KNNClassifier.cpp in Sources */,
 				0C48ECE31CF224D8005FBF63 /* FileHandler.cpp in Sources */,
 				0C7B62501CECF66A00397A0D /* ProjetoIBM.cxx in Sources */,

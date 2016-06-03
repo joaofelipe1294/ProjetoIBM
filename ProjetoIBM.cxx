@@ -1,22 +1,4 @@
-#include "itkImage.h"
-#include "itkImageFileReader.h"
-#include "itkImageFileWriter.h"
-#include "itkRGBToLuminanceImageFilter.h"
-#include "itkImageRegionConstIterator.h"
-#include <itkThresholdImageFilter.h>
-#include "itkNeighborhoodConnectedImageFilter.h"
-#include <itkOrImageFilter.h>
-#include <itkBinaryDilateImageFilter.h>
-#include "itkBinaryBallStructuringElement.h"
-#include "itkBinaryErodeImageFilter.h"
-#include "itkGrayscaleMorphologicalOpeningImageFilter.h"
-#include "itkGrayscaleMorphologicalClosingImageFilter.h"
 #include <iostream>
-#include <dirent.h>
-#include <cstdlib>
-#include <string>
-
-
 #include "FileHandler.hpp"
 #include "OptimalThreshold.hpp"
 #include "DataCollector.hpp"
@@ -24,172 +6,61 @@
 #include "LabelFinder.hpp"
 
 #include "TrainPipeline.hpp"
+#include "PreProcessPipeline.hpp"
 
 using namespace std;
 using namespace itk;
 
-//const int DIMENSIONS = 2;
 
-typedef Image<unsigned char , DIMENSIONS> GrayscaleImageType;
-typedef RGBPixel<unsigned char> RGBPixelType;
-typedef Image<RGBPixelType , DIMENSIONS> RGBImageType;
-typedef ImageFileReader<RGBImageType> RGBReaderType;
-typedef RGBToLuminanceImageFilter<RGBImageType, GrayscaleImageType> GrayscaleFilterType;
-typedef ThresholdImageFilter<GrayscaleImageType> ThresholdFilter;
-typedef NeighborhoodConnectedImageFilter<GrayscaleImageType, GrayscaleImageType> NeighborhoodConnectedFilterType;
-typedef OrImageFilter<GrayscaleImageType> OrFilterType;
-typedef ImageFileWriter<GrayscaleImageType> WriterType;
-typedef BinaryBallStructuringElement<GrayscaleImageType::PixelType , 2> StructuringElementType;
-typedef BinaryDilateImageFilter <GrayscaleImageType, GrayscaleImageType, StructuringElementType> BinaryDilateImageFilterType;
-typedef BinaryErodeImageFilter <GrayscaleImageType, GrayscaleImageType, StructuringElementType> BinaryErodeImageFilterType;
-typedef GrayscaleMorphologicalClosingImageFilter<GrayscaleImageType, GrayscaleImageType, StructuringElementType> OpeningMorphologyType;
 
 int main(int argc, char * argv[]){
-    string imageName , dirName;// = "img/";
-    int k;
+    string imageName , dirName , input;
+    int k = NULL;
+    bool needToTrain = NULL;
     if(argc == 1){
-        cout << "Pasta de treinamento : ";
-        cin >> dirName;
+        cout << "Treinar (S/N): ";
+        cin >> input;
+        if(input.compare("S") == 0 || input.compare("s") == 0){
+            needToTrain = true;
+            cout << "Pasta de treinamento : ";
+            cin >> dirName;
+        }else if(input.compare("N") || input.compare("n")){
+            needToTrain = false;
+        }
         cout << "K : ";
         cin >> k;
         cout << "Imagem a ser classificada : ";
         cin >> imageName;
-    }else{
+    }else if(argc == 4){
         dirName = argv[1];
         k = atoi(argv[2]);
         imageName = argv[3];
+    }else if(strcmp(argv[1], "-t")){
+        dirName = argv[2];
+        k = atoi(argv[3]);
+        imageName = argv[4];
     }
     
-    int limitValue = 0;
-    int label = NULL;
-    FILE* resultFile;
-    string resultFileName = "results.txt";
-    resultFile = fopen(resultFileName.c_str(), "w");
-    FileHandler* fileHandler = new FileHandler(dirName);
-    fprintf(resultFile, "%d\n" , fileHandler -> GetNumberOfFiles());
-    TrainPipeline* trainPipeline = new TrainPipeline(dirName);
-    trainPipeline -> Train();
+/* -------------------------------------------------- TRAIN ---------------------------------------------- */
     
-/* ================================================ CLASSIFY IMAGE ======================================== */
-    
-    
-/* --------------------------------------- IMAGE CONVERTING --------------------------------------------- */
-    
-    RGBReaderType::Pointer rgbReader = RGBReaderType::New();
-    rgbReader -> SetFileName(imageName); // teste uma imagem
-    GrayscaleFilterType::Pointer grayscaleFilter = GrayscaleFilterType::New();
-    grayscaleFilter -> SetInput(rgbReader -> GetOutput());
-    GrayscaleImageType::Pointer grayScaleImage = grayscaleFilter -> GetOutput();
-    grayscaleFilter -> Update();
-    
-/* ------------------------------------------------------------------------------------------------------ */
-    
-/* ------------------------------------------- OPENING MORPHOLOGY -------------------------------------------- */
-    
-    StructuringElementType structuringElementOpen;
-    structuringElementOpen.SetRadius(5);
-    structuringElementOpen.CreateStructuringElement();
-    OpeningMorphologyType::Pointer openingFilter = OpeningMorphologyType::New();
-    openingFilter -> SetInput(grayscaleFilter -> GetOutput());
-    openingFilter -> SetKernel(structuringElementOpen);
-    stringstream imageOutOpen;
-    imageOutOpen << "open_" << imageName;
-    cout  << "imageName : " << imageOutOpen.str() << endl;
-    WriterType::Pointer writerOpen = WriterType::New();
-    writerOpen -> SetFileName(imageOutOpen.str());
-    writerOpen -> SetInput(openingFilter -> GetOutput());
-    writerOpen -> Update();
-    
-    
-/* ------------------------------------------------------------------------------------------------------ */
-    
-/* ------------------------------------------- FIND THRESHOLD VALUE -------------------------------------- */
-    
-    Optimalthreshold* optimalThreshold = new Optimalthreshold(openingFilter -> GetOutput());
-    //Optimalthreshold* optimalThreshold = new Optimalthreshold(grayscaleFilter -> GetOutput());
-    limitValue = optimalThreshold -> GetOutput();
-    //cout << "Valor Limiar : " << limitValue << endl;
-    ThresholdFilter::Pointer thresholdFilter = ThresholdFilter::New();
-    thresholdFilter -> SetInput(grayscaleFilter -> GetOutput());
-    thresholdFilter -> SetOutsideValue(255);
-    thresholdFilter -> SetUpper(optimalThreshold -> GetOutput()); // valor aleatorio
-    thresholdFilter -> SetLower(0);
-    thresholdFilter -> Update();
-    GrayscaleImageType::Pointer thresholdImage = GrayscaleImageType::New();
-    thresholdImage = thresholdFilter -> GetOutput();
-    thresholdImage -> Update();
-    
-    /* ------------------------------------------------------------------------------------------------------ */
-    
-    /* ---------------------------------------- REGION GROWING ---------------------------------------------- */
-    
-    NeighborhoodConnectedFilterType::Pointer regionGrow = NeighborhoodConnectedFilterType::New();
-    float lower = 0;
-    float upper = optimalThreshold -> GetOutput();
-    regionGrow->SetLower(lower);
-    regionGrow->SetUpper(upper);
-    regionGrow->SetReplaceValue(255);
-    regionGrow->SetInput(grayscaleFilter -> GetOutput());
-    
-    for (int x = 5; x < 250; x += 5) {
-        GrayscaleImageType::IndexType seed1;
-        seed1[0] = x;
-        seed1[1] = 0;
-        regionGrow->AddSeed(seed1);
-        GrayscaleImageType::IndexType seed2;
-        seed2[0] = x;
-        seed2[1] = 255;
-        regionGrow->AddSeed(seed2);
-    }
-    for (int y = 0; y < 250; y += 5) {
-        GrayscaleImageType::IndexType seed1;
-        seed1[0] = 255;
-        seed1[1] = y;
-        regionGrow->AddSeed(seed1);
-        GrayscaleImageType::IndexType seed2;
-        seed2[0] = 0;
-        seed2[1] = y;
-        regionGrow->AddSeed(seed2);
+    if(needToTrain == true){
+        TrainPipeline* trainPipeline = new TrainPipeline(dirName);
+        trainPipeline -> Train();
     }
     
-/* ------------------------------------------------------------------------------------------------------ */
-    
-/* --------------------------------------------- OR IMAGEFILTER ----------------------------------------- */
-    
-    OrFilterType::Pointer orFilter = OrFilterType::New();
-    orFilter -> SetInput(0, thresholdImage);
-    orFilter -> SetInput(1, regionGrow -> GetOutput());
-    orFilter -> Update();
-    
 /* ------------------------------------------------------------------------------------------------------- */
+
+/* ------------------------------------------------- PRE PROCESS ------------------------------------------ */
     
-/* --------------------------------------------- DATA COLLECT -------------------------------------------- */
+    PreProcessPipeline* preProcess = new PreProcessPipeline(imageName);
+    ImageData imageData = preProcess -> Process();
     
-    //DataCollector* dataCollector = new DataCollector(dilateFilter -> GetOutput());
-    DataCollector* dataCollector = new DataCollector(orFilter -> GetOutput());
+/* --------------------------------------------------------------------------------------------------------- */
     
-/* ------------------------------------------------------------------------------------------------------- */
-    
-/* ------------------------------------------ GENERATE RESULTS ------------------------------------------- */
-    
-    
-    stringstream imageOut;
-    imageOut << "gray_" << imageName;
-    cout  << "imageName : " << imageOut.str() << endl;
-    WriterType::Pointer writer = WriterType::New();
-    writer -> SetFileName(imageOut.str());
-    writer -> SetInput(orFilter -> GetOutput());
-    writer -> Update();
-    
-/* ------------------------------------------------------------------------------------------------------- */
-    
-    ImageData imageData;
-    imageData.SetPxCount(dataCollector -> GetPxCount());
-    imageData.SetCellAvrage(dataCollector -> GetCellAvrage());
-    imageData.SetThresholdValue(limitValue);
-    cout << "thresholdvalue : " << imageData.GetThresholdValue() << " | pxCount : " << imageData.GetPxCount()  << " | cellAvrage : " << imageData.GetCellAvrage() << endl;
-    KNNClassifier* knnClassifier = new KNNClassifier(resultFileName , k , imageData);
-    cout << "Classe : " << knnClassifier -> FindLabel() << endl;
-    
+    //cout << "thresholdvalue : " << imageData.GetThresholdValue() << " | pxCount : " << imageData.GetPxCount()  << " | cellAvrage : " << imageData.GetCellAvrage() << endl;
+    KNNClassifier* knnClassifier = new KNNClassifier(RESULT_FILENAME , k , imageData);
+    cout << "+------------+" << endl;
+    cout << "| Classe : " << knnClassifier -> FindLabel() << " | " <<  endl;
+    cout << "+------------+" << endl;
     return EXIT_SUCCESS;
 }
