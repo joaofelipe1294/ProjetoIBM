@@ -23,10 +23,12 @@ private:
     GrayscaleImageType::Pointer image;
     int pxCount;
     int cellAvrage;
+    int aberration;
+    void GetData();
+    void CalcAberration();
 public:
     int GetPxCount();
     int GetCellAvrage();
-protected:
-    void GetData();
+    int GetAberration();
 };
 #endif /* DataCollector_hpp */

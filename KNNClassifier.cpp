@@ -27,18 +27,19 @@ KNNClassifier::KNNClassifier(string trainFileName , int k , ImageData compareObj
 void KNNClassifier::GetData(){
     //this -> filePointer = fopen("results.txt", "r");
     this -> filePointer = fopen(this -> trainFileName.c_str(), "r");
-    int thresholdValue , pxCount , cellAvrg , label , linesNumber;
+    int thresholdValue , pxCount , cellAvrg , label , linesNumber , aberration;
     fscanf(this -> filePointer, "%d" , &linesNumber);
     this -> objectsNumber = linesNumber;
     this -> dataObjects = new ImageData[this -> objectsNumber];
     int line = 0;
     while (feof(this -> filePointer) == false) {
         //fscanf(this -> filePointer, "%d , %d , %d , %d" , &thresholdValue , &pxCount , &cellAvrg , &label);
-        fscanf(this -> filePointer, "%d , %d , %d" , &thresholdValue , &cellAvrg , &label);
+        fscanf(this -> filePointer, "%d , %d , %d , %d" , &thresholdValue , &cellAvrg , &aberration , &label);
         ImageData imageData;
         imageData.SetThresholdValue(thresholdValue);
         imageData.SetPxCount(pxCount);
         imageData.SetCellAvrage(cellAvrg);
+        imageData.SetAberration(aberration);
         imageData.SetLabel(label);
         this -> dataObjects[line] = imageData;
         //cout << "limiar : " << thresholdValue << " | contagem : " << pxCount << " | cellAvrg : " << cellAvrg << endl;
@@ -52,8 +53,9 @@ void KNNClassifier::CompareObjects(){
         //int pxCountDiference = this -> compareObject.GetPxCount() - this -> dataObjects[cont].GetPxCount();
         int thresholdDiference = this -> compareObject.GetThresholdValue() - this -> dataObjects[cont].GetThresholdValue();
         int cellAvrageDiference = this -> compareObject.GetCellAvrage() - this -> dataObjects[cont].GetCellAvrage();
+        int aberrationDistance = this -> compareObject.GetAberration() - this -> dataObjects[cont].GetAberration();
         //int distance = abs(pxCountDiference) + abs(thresholdDiference) + abs(cellAvrageDiference);
-        int distance = abs(thresholdDiference) + abs(cellAvrageDiference);
+        int distance = abs(thresholdDiference) + abs(cellAvrageDiference) + abs(aberrationDistance);
         if(cont < this -> kNearest){
             //cout << "ADICIONADO - " << cont << " - distance : " << distance << endl;
             this -> dataObjects[cont].SetDistance(distance);

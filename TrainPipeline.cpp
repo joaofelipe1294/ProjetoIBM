@@ -142,10 +142,10 @@ void TrainPipeline::Train(){
 /* ------------------------------------------------------------------------------------------------------- */
         if(dataCollector -> GetPxCount() == 0){
             //fprintf(resultFile,"%d , %d , %d , %d\n",limitValue * 2 , dataCollector -> GetPxCount() , dataCollector -> GetCellAvrage() , label);
-            fprintf(resultFile,"%d , %d , %d\n",limitValue * 2 , dataCollector -> GetCellAvrage() , label);
+            fprintf(resultFile,"%d , %d , %d , %d\n",limitValue * 2 , dataCollector -> GetCellAvrage() , dataCollector -> GetAberration() , label);
         }else{
             //fprintf(resultFile,"%d , %d , %d , %d\n",limitValue , dataCollector -> GetPxCount() / 100 , dataCollector -> GetCellAvrage() , label);
-            fprintf(resultFile,"%d , %d , %d\n",limitValue , dataCollector -> GetCellAvrage() , label);
+            fprintf(resultFile,"%d , %d , %d , %d\n",limitValue , dataCollector -> GetCellAvrage() , dataCollector -> GetAberration() , label);
         }
             
         cout << "Processado  " << cont + 1 << " de " << fileHandler -> GetNumberOfFiles() << endl;

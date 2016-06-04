@@ -47,3 +47,11 @@ int ImageData::GetLabel(){
 int ImageData::GetDistance(){
     return this -> distance;
 }
+
+void ImageData::SetAberration(int aberration){
+    this -> aberration = aberration;
+}
+
+int ImageData::GetAberration(){
+    return this -> aberration;
+}

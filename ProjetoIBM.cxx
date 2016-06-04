@@ -11,8 +11,6 @@
 using namespace std;
 using namespace itk;
 
-
-
 int main(int argc, char * argv[]){
     string imageName , dirName , input;
     int k = NULL;

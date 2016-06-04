@@ -16,7 +16,9 @@ DataCollector::DataCollector(GrayscaleImageType::Pointer image){
     this -> pxCount = 0;
     this -> cellAvrage = 0;
     this -> image = image;
+    this -> aberration = 0;
     GetData();
+    CalcAberration();
 }
 
 void DataCollector::GetData(){
@@ -51,5 +53,29 @@ int DataCollector::GetCellAvrage(){
     }else{
         return this -> cellAvrage;
     }
-    
+}
+
+void DataCollector::CalcAberration(){
+    this -> image -> Update();
+    GrayscaleImageType::RegionType region = this -> image -> GetLargestPossibleRegion();
+    ImageRegionConstIterator<GrayscaleImageType> imageIterator(this -> image , region);
+    imageIterator.GoToBegin();
+    while(!imageIterator.IsAtEnd()){
+        unsigned char val = imageIterator.Get();
+        int intValue = (int)val;
+        if(intValue < 255){
+            this -> aberration += ((intValue - this -> cellAvrage) * (intValue - this -> cellAvrage));
+        }
+        //cout << "pk : " << intValue << endl;
+        ++imageIterator;
+    }
+    if(this -> pxCount != 0){
+        this -> aberration /= this -> pxCount;
+    }
+    this -> aberration = sqrt(this -> aberration);
+    this -> aberration = int(this -> aberration);
+}
+
+int DataCollector::GetAberration(){
+    return this -> aberration;
 }
