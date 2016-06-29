@@ -12,7 +12,7 @@ PreProcessPipeline::PreProcessPipeline(string imageName){
     this -> imageName = imageName;
 }
 
-ImageData PreProcessPipeline::Process(){
+void PreProcessPipeline::Process(){
         int limitValue = 0;
     
 /* --------------------------------------- IMAGE CONVERTING --------------------------------------------- */
@@ -124,11 +124,22 @@ ImageData PreProcessPipeline::Process(){
     
 /* ------------------------------------------ RETURN COMPUTED VALUES ------------------------------------- */
     
-    ImageData imageData;
-    imageData.SetPxCount(dataCollector -> GetPxCount());
-    imageData.SetCellAvrage(dataCollector -> GetCellAvrage());
-    imageData.SetThresholdValue(limitValue);
-    return imageData;
+    //ImageData imageData;
+    //imageData.SetPxCount(dataCollector -> GetPxCount());
+    //imageData.SetCellAvrage(dataCollector -> GetCellAvrage());
+    //imageData.SetThresholdValue(limitValue);
+    
+    FILE* resultFile;
+    resultFile = fopen("image.txt", "w");
+    if(dataCollector -> GetPxCount() == 0){
+        fprintf(resultFile,"%d,%d,%d\n",limitValue * 2 , dataCollector -> GetCellAvrage() , dataCollector -> GetAberration());
+    }else{
+        fprintf(resultFile,"%d,%d,%d\n",limitValue , dataCollector -> GetCellAvrage() , dataCollector -> GetAberration());
+    }
+    //fprintf(resultFile, "%d,%d,%d" , imageData.get)
+    
+    
+    //return imageData;
     
 /* ------------------------------------------------------------------------------------------------------- */
     

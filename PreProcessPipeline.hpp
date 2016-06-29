@@ -59,7 +59,7 @@ private:
     string imageName;
 public:
     PreProcessPipeline(string imageName);
-    ImageData Process();
+    void Process();
 };
 
 #endif /* PreProcessPipeline_hpp */

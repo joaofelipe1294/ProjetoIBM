@@ -26,7 +26,7 @@
 #include <dirent.h>
 #include <cstdlib>
 #include <string>
-
+#include "ProgressBar.hpp"
 
 #include "FileHandler.hpp"
 #include "OptimalThreshold.hpp"
@@ -38,7 +38,7 @@ using namespace std;
 using namespace itk;
 
 const int DIMENSIONS = 2;
-const string RESULT_FILENAME = "results.txt";
+//const string RESULT_FILENAME = "results.txt";
 
 typedef Image<unsigned char , DIMENSIONS> GrayscaleImageType;
 typedef RGBPixel<unsigned char> RGBPixelType;
@@ -58,8 +58,9 @@ typedef GrayscaleMorphologicalClosingImageFilter<GrayscaleImageType, GrayscaleIm
 class TrainPipeline{
 private:
     string dirName;
+    string resultFileName;
 public:
-    TrainPipeline(string dirName);
+    TrainPipeline(string dirName , string resultFileName);
     void Train();
 };
 

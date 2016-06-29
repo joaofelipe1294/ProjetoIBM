@@ -12,11 +12,10 @@ using namespace std;
 using namespace itk;
 
 int main(int argc, char * argv[]){
-    string imageName , dirName , input;
-    int k = NULL;
+    string imageName , dirName , input , resultFileName;
     bool needToTrain = NULL;
     if(argc == 1){
-        cout << "Treinar (S/N): ";
+        /*cout << "Treinar (S/N): ";
         cin >> input;
         if(input.compare("S") == 0 || input.compare("s") == 0){
             needToTrain = true;
@@ -24,41 +23,45 @@ int main(int argc, char * argv[]){
             cin >> dirName;
         }else if(input.compare("N") || input.compare("n")){
             needToTrain = false;
-        }
-        cout << "K : ";
-        cin >> k;
-        cout << "Imagem a ser classificada : ";
-        cin >> imageName;
-    }else if(argc == 4){
+        }*/
+        //cout << "Imagem a ser classificada : ";
+        //cin >> imageName;
+        cout << "Diretorio treino : ";
+        cin >> dirName;
+        cout << "Arquivo de saida : ";
+        cin >> resultFileName;
+    //}else if (argc == 2){
+    //    imageName = argv[1];
+    //    needToTrain = false;
+    }else if(argc ==  3){
+        //needToTrain = true;
         dirName = argv[1];
-        k = atoi(argv[2]);
-        imageName = argv[3];
-    }else if(strcmp(argv[1], "-t")){
-        dirName = argv[2];
-        k = atoi(argv[3]);
-        imageName = argv[4];
+        //imageName = argv[2];
+        resultFileName = argv[2];
+    }else{
+        return EXIT_FAILURE;
     }
     
 /* -------------------------------------------------- TRAIN ---------------------------------------------- */
     
-    if(needToTrain == true){
-        TrainPipeline* trainPipeline = new TrainPipeline(dirName);
+    //if(needToTrain == true){
+        TrainPipeline* trainPipeline = new TrainPipeline(dirName , resultFileName);
         trainPipeline -> Train();
-    }
+    //}
     
 /* ------------------------------------------------------------------------------------------------------- */
 
-/* ------------------------------------------------- PRE PROCESS ------------------------------------------ */
+/* ------------------------------------------------- PRE PROCESS ------------------------------------------ *
     
     PreProcessPipeline* preProcess = new PreProcessPipeline(imageName);
-    ImageData imageData = preProcess -> Process();
+    preProcess -> Process();
     
 /* --------------------------------------------------------------------------------------------------------- */
     
     //cout << "thresholdvalue : " << imageData.GetThresholdValue() << " | pxCount : " << imageData.GetPxCount()  << " | cellAvrage : " << imageData.GetCellAvrage() << endl;
-    KNNClassifier* knnClassifier = new KNNClassifier(RESULT_FILENAME , k , imageData);
-    cout << "+------------+" << endl;
-    cout << "| Classe : " << knnClassifier -> FindLabel() << " | " <<  endl;
-    cout << "+------------+" << endl;
+    //KNNClassifier* knnClassifier = new KNNClassifier(RESULT_FILENAME , k , imageData);
+    //cout << "+------------+" << endl;
+    //cout << "| Classe : " << knnClassifier -> FindLabel() << " | " <<  endl;
+    //cout << "+------------+" << endl;
     return EXIT_SUCCESS;
 }

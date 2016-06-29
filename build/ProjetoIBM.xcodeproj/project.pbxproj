@@ -40,6 +40,7 @@
 		0C48ECE31CF224D8005FBF63 /* FileHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C48ECE11CF224D8005FBF63 /* FileHandler.cpp */; };
 		0C48ECE61CF255CE005FBF63 /* OptimalThreshold.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C48ECE41CF255CE005FBF63 /* OptimalThreshold.cpp */; };
 		0C7B62501CECF66A00397A0D /* ProjetoIBM.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 0C7B624F1CECF66A00397A0D /* ProjetoIBM.cxx */; };
+		0C85CD291D2356A6007CD4B7 /* ProgressBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C85CD271D2356A6007CD4B7 /* ProgressBar.cpp */; };
 		0C91819D1D00D75C0056FFE1 /* LabelFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C91819B1D00D75C0056FFE1 /* LabelFinder.cpp */; };
 		0C9181A01D00DB580056FFE1 /* TrainPipeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C91819E1D00DB580056FFE1 /* TrainPipeline.cpp */; };
 		0C9181A51D0100600056FFE1 /* PreProcessPipeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C9181A31D0100600056FFE1 /* PreProcessPipeline.cpp */; };
@@ -82,6 +83,8 @@
 		0C48ECE41CF255CE005FBF63 /* OptimalThreshold.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OptimalThreshold.cpp; sourceTree = "<group>"; };
 		0C48ECE51CF255CE005FBF63 /* OptimalThreshold.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OptimalThreshold.hpp; sourceTree = "<group>"; };
 		0C7B624F1CECF66A00397A0D /* ProjetoIBM.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProjetoIBM.cxx; sourceTree = "<group>"; };
+		0C85CD271D2356A6007CD4B7 /* ProgressBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProgressBar.cpp; sourceTree = "<group>"; };
+		0C85CD281D2356A6007CD4B7 /* ProgressBar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ProgressBar.hpp; sourceTree = "<group>"; };
 		0C91819B1D00D75C0056FFE1 /* LabelFinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabelFinder.cpp; sourceTree = "<group>"; };
 		0C91819C1D00D75C0056FFE1 /* LabelFinder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LabelFinder.hpp; sourceTree = "<group>"; };
 		0C91819E1D00DB580056FFE1 /* TrainPipeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TrainPipeline.cpp; sourceTree = "<group>"; };
@@ -129,6 +132,15 @@
 			name = classes;
 			sourceTree = "<group>";
 		};
+		0C85CD261D23566F007CD4B7 /* progress_bar */ = {
+			isa = PBXGroup;
+			children = (
+				0C85CD271D2356A6007CD4B7 /* ProgressBar.cpp */,
+				0C85CD281D2356A6007CD4B7 /* ProgressBar.hpp */,
+			);
+			name = progress_bar;
+			sourceTree = "<group>";
+		};
 		0C9181A21D00E0FB0056FFE1 /* pipelines */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +162,7 @@
 		4389BDA4088045419B0EDB17 /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
+				0C85CD261D23566F007CD4B7 /* progress_bar */,
 				0C9181A21D00E0FB0056FFE1 /* pipelines */,
 				0C05B2E31CF2B4A700587394 /* headers */,
 				0C48ECDF1CF22325005FBF63 /* classes */,
@@ -301,6 +314,7 @@
 				0C05B2E21CF2B05800587394 /* DataCollector.cpp in Sources */,
 				0C91819D1D00D75C0056FFE1 /* LabelFinder.cpp in Sources */,
 				0C9181A01D00DB580056FFE1 /* TrainPipeline.cpp in Sources */,
+				0C85CD291D2356A6007CD4B7 /* ProgressBar.cpp in Sources */,
 				0C0778A91CF3B53A00F2C6FB /* ImageData.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

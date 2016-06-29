@@ -11,18 +11,20 @@
 #include "TrainPipeline.hpp"
 
 
-TrainPipeline::TrainPipeline(string dirName){
+TrainPipeline::TrainPipeline(string dirName , string resultFileName){
     this -> dirName = dirName;
+    this -> resultFileName = resultFileName;
 }
 
 void TrainPipeline::Train(){
     int limitValue = 0;
     int label = NULL;
     FILE* resultFile;
+    ProgressBar progressBar;
     //string resultFileName = "results.txt";
-    resultFile = fopen(RESULT_FILENAME.c_str(), "w");
+    resultFile = fopen(this -> resultFileName.c_str(), "w");
     FileHandler* fileHandler = new FileHandler(dirName);
-    fprintf(resultFile, "%d\n" , fileHandler -> GetNumberOfFiles());
+    //fprintf(resultFile, "%d\n" , fileHandler -> GetNumberOfFiles());
     for (int cont = 0; cont < fileHandler -> GetNumberOfFiles(); cont++) {
             
 /* --------------------------------------- IMAGE CONVERTING --------------------------------------------- */
@@ -128,16 +130,16 @@ void TrainPipeline::Train(){
         
 /* ------------------------------------------------------------------------------------------------------- */
             
-/* ------------------------------------------ GENERATE RESULTS ------------------------------------------- */
+/* ------------------------------------------ GENERATE RESULTS ------------------------------------------- *
         
-        //stringstream imageOut;
-        //imageOut << "out/" << fileHandler -> GetFiles()[cont].substr(dirName.length() , (fileHandler -> GetFiles()[cont].length() - dirName.length()));
-        //cout  << "imageName : " << imageOut.str() << endl;
-        //cout << "==============================================================================" << endl << endl;
-        //WriterType::Pointer writer = WriterType::New();
-        //writer -> SetFileName(imageOut.str());
-        //writer -> SetInput(dilateFilter -> GetOutput());
-        //writer -> Update();
+        stringstream imageOut;
+        imageOut << "out/" << fileHandler -> GetFiles()[cont].substr(dirName.length() , (fileHandler -> GetFiles()[cont].length() - dirName.length()));
+        cout  << "imageName : " << imageOut.str() << endl;
+        cout << "==============================================================================" << endl << endl;
+        WriterType::Pointer writer = WriterType::New();
+        writer -> SetFileName(imageOut.str());
+        writer -> SetInput(orFilter -> GetOutput());
+        writer -> Update();
             
 /* ------------------------------------------------------------------------------------------------------- */
         if(dataCollector -> GetPxCount() == 0){
@@ -147,8 +149,10 @@ void TrainPipeline::Train(){
             //fprintf(resultFile,"%d , %d , %d , %d\n",limitValue , dataCollector -> GetPxCount() / 100 , dataCollector -> GetCellAvrage() , label);
             fprintf(resultFile,"%d , %d , %d , %d\n",limitValue , dataCollector -> GetCellAvrage() , dataCollector -> GetAberration() , label);
         }
-            
-        cout << "Processado  " << cont + 1 << " de " << fileHandler -> GetNumberOfFiles() << endl;
+        //cout << "tot : " << fileHandler -> GetNumberOfFiles() << " | inc : " <<  (100 / (float) fileHandler -> GetNumberOfFiles()) << endl;
+        progressBar.update(100 / (float) fileHandler -> GetNumberOfFiles());
+        progressBar.print();
+        //cout << "Processado  " << cont + 1 << " de " << fileHandler -> GetNumberOfFiles() << endl;
     }
     fclose(resultFile);
     

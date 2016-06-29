@@ -352,6 +352,7 @@ dependencies: \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkGrayscaleMorphologicalClosingImageFilter.h \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkAnchorCloseImageFilter.h \
   /Users/joaofelipe_lopes/Documents/mestrado/processamento_de_imagens/InsightToolkit-4.9.1/Modules/Filtering/MathematicalMorphology/include/itkGrayscaleMorphologicalClosingImageFilter.hxx \
+  /Users/joaofelipe_lopes/Desktop/ProjetoIBM/ProgressBar.hpp \
   /Users/joaofelipe_lopes/Desktop/ProjetoIBM/FileHandler.hpp \
   /Users/joaofelipe_lopes/Desktop/ProjetoIBM/OptimalThreshold.hpp \
   /Users/joaofelipe_lopes/Desktop/ProjetoIBM/DataCollector.hpp \
